@@ -1,0 +1,68 @@
+{
+    "agent": {
+      "metrics_collection_interval": 10,
+      "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log",
+      "credentials": {
+        "role_arn": "arn:aws:iam::953675754374:role/prj055-gamelift-role"
+      }
+    },
+    "metrics":{
+        "metrics_collected":{
+           "statsd":{
+              "service_address":":8125",
+              "metrics_collection_interval":60,
+              "metrics_aggregation_interval":60
+           },
+            "procstat": [
+                {
+                    "pattern": "PORT=7777",            
+                    "measurement": [
+                        "cpu_usage",
+                        "cpu_time",
+                        "read_bytes",
+                        "write_bytes",
+                        "memory_rss",
+                        "memory_data"
+                    ]
+                },
+                {
+                    "pattern": "PORT=7778",            
+                    "measurement": [
+                        "cpu_usage",
+                        "read_bytes",
+                        "write_bytes",
+                        "memory_rss",
+                        "memory_data"
+                    ]
+                }
+            ]
+        }
+    },
+    "logs": {
+      "logs_collected": {
+        "files": {
+          "collect_list": [
+            {
+                "file_path": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log",
+                "log_group_name": "/aws/gamelift/AmazonCloudWatchAgentLogs",
+                "log_stream_name": "AmazonCloudWatchAgentLogs-{instance_id}",
+                "timezone": "UTC"
+            },
+            {
+              "file_path": "/local/game/PRJ055/Saved/Logs/PRJ055.log",
+              "log_group_name": "/aws/gamelift/GameServerLogs",
+              "log_stream_name": "GameServerLogs-{ip_address}-PRJ055.log",
+              "timezone": "Local"
+            },
+            {
+              "file_path": "/local/game/PRJ055/Saved/Logs/PRJ055_2.log",
+              "log_group_name": "/aws/gamelift/GameServerLogs",
+              "log_stream_name": "GameServerLogs-{ip_address}-PRJ055_2.log",
+              "timezone": "Local"
+            }
+          ]
+        }
+      },
+      "force_flush_interval" : 15
+    }
+}
