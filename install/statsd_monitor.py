@@ -1,5 +1,13 @@
 #!/usr/bin/env python3.8
 
+#
+# local/game/PRJ055/Saved/Logs/metrics*.txt を監視してカスタムメトリクスをStatsDに送信する
+# 送信先はlocalhostの8125ポート
+# metrics*.txt で出力される値の意味は UE側ソースファイルの PRJ055AppGameMode.cpp に記載されているので
+# メトリクスが追加された場合はこのファイルを参照する
+#
+
+
 import statsd
 import time
 import pandas as pd
@@ -13,7 +21,7 @@ args = sys.argv
 arg_filename = args[1]
 
 DIRECTORY = '/local/game/PRJ055/Saved/Logs/'
-FILE = arg_filename + ".txt"
+FILE = arg_filename + ".txt"    
 PATH = DIRECTORY + FILE
 
 len_df = -1
