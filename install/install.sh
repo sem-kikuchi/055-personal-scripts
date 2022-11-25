@@ -13,11 +13,17 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-c
 
 # Python (statsd) Install
 sudo amazon-linux-extras install python3.8 -y
-sudo pip3.8 install statsd watchdog pandas
+sudo pip3.8 install statsd
 
 # custom metrics collect in background
 sudo chmod +x statsd_monitor.py 
+sudo chmod +x statsd_monitor.sh 
 
-pyhon3.8 statsd_monitor.py metrics &
-pyhon3.8 statsd_monitor.py metrics_1 &
+sudo cp statsd_monitor@.service /etc/systemd/system/
+sudo systemctl enable statsd_monitor@"metrics"
+sudo systemctl start statsd_monitor@"metrics"
+sudo systemctl enable statsd_monitor@"metrics_1"
+sudo systemctl start statsd_monitor@"metrics_1"
 
+# sudo systemctl status statsd_monitor@"metrics"
+# sudo systemctl status statsd_monitor@"metrics_1"

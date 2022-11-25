@@ -1,0 +1,10 @@
+[Unit]
+Description = statsd monitor metrics
+
+[Service]
+ExecStart = /local/game/statsd_monitor.sh /local/game/PRJ055/Saved/Logs/%I.txt %I
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target
