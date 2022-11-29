@@ -34,7 +34,24 @@ chmod +x *.sh
 chmod +x PRJ055/Binaries/Linux/PRJ055Server
 mkdir -p PRJ055/Saved/Logs/
 touch PRJ055/Saved/Logs/dummy.txt
-aws gamelift upload-build --debug --name gg_game_server_build --build-version ${ver} --build-root ./ --operating-system AMAZON_LINUX_2 --profile pg055
+
+date=$(date +"%Y%m%d-%H%M%S")
+
+fn=server-${date}-${ver}.zip
+bucket=gg-gamelift-server-build
+role=arn:aws:iam::953675754374:role/prj055-gamelift-role
+
+rm -rf temp
+mkdir temp
+
+# s3 upload
+echo s3 upload to s3://${bucket}/${fn}
+
+zip -r -7 ./temp/${fn} ./
+aws s3 cp ./temp/${fn} s3://${bucket}/ --profile pg055
+
+echo upload done.
+echo s3://${bucket}/${fn}
 
 popd
 
