@@ -12,25 +12,29 @@ filename = args[2]
 
 class Metrics(IntEnum):
     TIMESTAMP = 0
-    AVE_FPS = 1
-    AVE_MS = 2
-    CONNECTION_NUM = 3
-    AVE_PING = 4
-    MAX_PING = 5
-    IN_RATE = 6
-    OUT_RATE = 7
-    ACTOR_COUNT = 8
-    ACTIVE_NW_OBJ = 9
-    SUSPEND_NW_OBJ = 10
-    SERVER_REPLICATE_ACTOR = 11
-    REPLICATE_ACTOR_TIME = 12
-    REPLICATE_GATHER_PRIORITIE_TIME = 13
-    NUM_REPLICATE_ACTOR_CALL = 14
-    NUM_REPLICATE_ACTOR_CALL_PER_CON_AVG = 15
+    PROCESS_ID = 1
+    AVE_FPS = 2
+    AVE_MS = 3
+    CONNECTION_NUM = 4
+    AVE_PING = 5
+    MAX_PING = 6
+    IN_RATE = 7
+    OUT_RATE = 8
+    ACTOR_COUNT = 9
+    ACTIVE_NW_OBJ = 10
+    SUSPEND_NW_OBJ = 11
+    SERVER_REPLICATE_ACTOR = 12
+    REPLICATE_ACTOR_TIME = 13
+    REPLICATE_GATHER_PRIORITIE_TIME = 14
+    NUM_REPLICATE_ACTOR_CALL = 15
+    NUM_REPLICATE_ACTOR_CALL_PER_CON_AVG = 16
 
 def main():
     spl_str = metrics_str.split()
-    statsd = StatsClient('localhost', 8125, prefix='custom.' + filename)
+
+    procid = spl_str[Metrics.PROCESS_ID];
+
+    statsd = StatsClient('localhost', 8125, prefix='custom.pid-' + procid)
     statsd.gauge('ave_fps', float(spl_str[Metrics.AVE_FPS]))
     statsd.gauge('ave_ms',  float(spl_str[Metrics.AVE_MS]))
     statsd.gauge('connection_num',  int(spl_str[Metrics.CONNECTION_NUM]))

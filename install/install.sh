@@ -21,3 +21,6 @@ sudo chmod +x statsd_monitor.sh
 
 sudo cp statsd_monitor@.service /etc/systemd/system/
 
+sudo systemctl enable statsd_monitor@"metrics"
+sudo systemctl start statsd_monitor@"metrics"
+# sudo systemctl status statsd_monitor@"metrics"

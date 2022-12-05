@@ -22,7 +22,7 @@ role=arn:aws:iam::953675754374:role/prj055-gamelift-role
 echo name=${name}
 echo buildid=${buildid}
 
-location=Location=ap-northeast-1
+location=$(python gen_location.py ./location-list.txt)
 instancetype=c4.large
 
 inbound=$(python gen_inbound.py ./inbound-list.txt ${startport} ${endport})
@@ -35,7 +35,7 @@ aws gamelift create-fleet --name ${name} \
 --instance-role-arn ${role} \
 --runtime-configuration "${config}" \
 --metric-groups ${metricsgroup} \
---locations ${location} \
+--locations "${location}" \
 --ec2-instance-type ${instancetype} \
 --fleet-type SPOT \
 --ec2-inbound-permissions "${inbound}" \

@@ -2,13 +2,22 @@
 
 fleetid=${1}
 
+if [ $# == 2 ]; then
+    location=${2}
+else
+    location=ap-northeast-1
+fi
+
+
 CURRENT=$(cd $(dirname $0);pwd)
 
 pushd $CURRENT
 
-json=`aws gamelift describe-instances --fleet-id ${fleetid} --output json --region ap-northeast-1 --profile pg055 | jq .Instances[0]`
+json=`aws gamelift describe-instances --fleet-id ${fleetid} --output json --location ${location} --region ap-northeast-1 --profile pg055 | jq .Instances[0]`
 
 echo ${json}
+
+# exit
 
 instanceid=`echo ${json} | jq -r .InstanceId`
 ip=`echo ${json} | jq -r .IpAddress`

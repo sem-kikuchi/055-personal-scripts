@@ -16,7 +16,7 @@ def main(startport, endport):
         dict = {}
 
         dict['LaunchPath'] = "/local/game/PRJ055/Binaries/Linux/PRJ055Server"
-        dict['Parameters'] = "PRJ055 -gamelift PORT=" + str(i)
+        dict['Parameters'] = "PRJ055 -gamelift PORT=" + str(i) + " LOG=PRJ055-Port-" + str(i) + ".log"
         dict['ConcurrentExecutions'] = 1
         configs.append(dict)
 

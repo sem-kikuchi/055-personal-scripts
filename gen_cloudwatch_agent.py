@@ -33,15 +33,11 @@ def main(filename, startport, endport):
     dict['timezone'] = "UTC"
     collect_list.append(dict)
 
-    for i in range(0, int(endport) - int(startport) + 1):
+    for i in range(int(startport), int(endport) + 1):
         dict = {}
-        if i == 0:
-            suffix = ""
-        else:
-            suffix = "_" + str(i + 1)
-        dict['file_path'] = "/local/game/PRJ055/Saved/Logs/PRJ055" + suffix + ".log"
+        dict['file_path'] = "/local/game/PRJ055/Saved/Logs/PRJ055-Port-" + str(i) + ".log"
         dict['log_group_name'] = "/aws/gamelift/GameServerLogs"
-        dict['log_stream_name'] = "GameServerLogs-{ip_address}-PRJ055" + suffix + ".log"
+        dict['log_stream_name'] = "GameServerLogs-{instance_id}-{ip_address}-Port-" + str(i) + ".log"
         dict['timezone'] = "Local"
         collect_list.append(dict)
 
