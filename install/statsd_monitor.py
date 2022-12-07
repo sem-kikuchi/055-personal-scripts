@@ -3,6 +3,8 @@
 import statsd
 import time
 import sys
+import psutil
+
 from enum import IntEnum
 from statsd import StatsClient
 
@@ -29,12 +31,20 @@ class Metrics(IntEnum):
     NUM_REPLICATE_ACTOR_CALL = 15
     NUM_REPLICATE_ACTOR_CALL_PER_CON_AVG = 16
 
+def get_port(pid):
+    for proc in psutil.process_iter():
+        if pid == str(proc.pid):
+            for cmd in proc.cmdline():
+                if cmd.startswith("PORT="):
+                    return cmd[5:]
+
 def main():
     spl_str = metrics_str.split()
 
     procid = spl_str[Metrics.PROCESS_ID];
+    port = get_port(pid = procid)
 
-    statsd = StatsClient('localhost', 8125, prefix='custom.pid-' + procid)
+    statsd = StatsClient('localhost', 8125, prefix='custom.port' + port)
     statsd.gauge('ave_fps', float(spl_str[Metrics.AVE_FPS]))
     statsd.gauge('ave_ms',  float(spl_str[Metrics.AVE_MS]))
     statsd.gauge('connection_num',  int(spl_str[Metrics.CONNECTION_NUM]))

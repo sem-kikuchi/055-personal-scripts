@@ -18,6 +18,7 @@ fi
 
 metricsgroup=gg_gamelift_logs
 role=arn:aws:iam::953675754374:role/prj055-gamelift-role
+# role=arn:aws:iam::953675754374:role/service-role/prj055-gamelift-service-role
 
 echo name=${name}
 echo buildid=${buildid}
@@ -39,7 +40,6 @@ aws gamelift create-fleet --name ${name} \
 --ec2-instance-type ${instancetype} \
 --fleet-type SPOT \
 --ec2-inbound-permissions "${inbound}" \
---debug \
 --profile pg055
 
 popd

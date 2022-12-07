@@ -7,7 +7,7 @@ list=(${s3arn//\// })
 
 bucket=$(echo ${s3arn%/*} | sed -e 's/s3:\/\///')
 fn=$(echo ${s3arn##*/})
-role=arn:aws:iam::953675754374:role/prj055-gamelift-role
+role=arn:aws:iam::953675754374:role/prj055-gamelift-create-build-role
 
 echo $bucket
 echo $fn
