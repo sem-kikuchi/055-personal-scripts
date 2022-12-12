@@ -26,10 +26,15 @@ do
 
 done
 
-echo ${proforg}
-echo ${aws_access_key_id}
-echo ${aws_secret_access_key}
-echo ${aws_session_token}
+echo proforg=${proforg}
+echo aws_access_key_id=${aws_access_key_id}
+echo aws_secret_access_key=${aws_secret_access_key}
+echo aws_session_token=${aws_session_token}
+
+if [ -z "$aws_access_key_id" ]; then
+  echo no need modify
+  exit 
+fi
 
 aws --profile $prof configure set aws_access_key_id $aws_access_key_id
 aws --profile $prof configure set aws_secret_access_key $aws_secret_access_key

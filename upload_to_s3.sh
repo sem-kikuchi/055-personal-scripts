@@ -11,14 +11,19 @@ else
 fi
 
 
-filename='./install/amazon-cloudwatch-agent.json'
-
 CURRENT=$(cd $(dirname $0);pwd)
 echo $CURRENT
 
 pushd $CURRENT
 
-config=$(python gen_cloudwatch_agent.py ${filename} ${startport} ${endport})
+docker-compose up -d --build
+
+jsonfile=amazon-cloudwatch-agent.json
+
+cp ./install/${jsonfile} ./python-work/
+
+echo test
+config=$(docker exec -it python3 python gen_cloudwatch_agent.py /work/${jsonfile} ${startport} ${endport})
 # scripts=$(python gen_install_script.py ${startport} ${endport})
 
 cp ./install/* ../linux_build/LinuxServer
@@ -52,6 +57,8 @@ aws s3 cp ./temp/${fn} s3://${bucket}/ --profile pg055
 
 echo upload done.
 echo s3://${bucket}/${fn}
+
+echo create_build.sh ${ver} s3://${bucket}/${fn}
 
 popd
 

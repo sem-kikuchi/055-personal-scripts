@@ -10,11 +10,11 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_ave_fps", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_ave_fps", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_ave_fps", ".", ".", ".", "." ]
                 ],
                 "liveData": true,
@@ -42,10 +42,10 @@
                 "view": "timeSeries",
                 "stacked": false,
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_ave_ms", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_ave_ms", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_ave_ms", ".", ".", ".", "." ]
                 ],
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "title": "ave_ms",
                 "period": 300,
                 "legend": {
@@ -69,7 +69,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -83,7 +83,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_connection_num", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_connection_num", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_connection_num", ".", ".", ".", "." ]
                 ],
                 "title": "connection_num"
@@ -99,7 +99,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -113,7 +113,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "custom_port7778_ave_ping", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7778_ave_ping", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7777_ave_ping", ".", ".", ".", "." ],
                     [ ".", "custom_port7777_max_ping", ".", ".", ".", "." ],
                     [ ".", "custom_port7778_max_ping", ".", ".", ".", "." ]
@@ -129,7 +129,7 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_in_rate", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_in_rate", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_in_rate", ".", ".", ".", "." ],
                     [ ".", "custom_port7777_out_rate", ".", ".", ".", "." ],
                     [ ".", "custom_port7778_out_rate", ".", ".", ".", "." ]
@@ -137,7 +137,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -163,7 +163,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -177,7 +177,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_actor_count", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_actor_count", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_actor_count", ".", ".", ".", "." ]
                 ],
                 "title": "actor_count"
@@ -191,7 +191,7 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_active_nw_obj", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_active_nw_obj", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_active_nw_obj", ".", ".", ".", "." ],
                     [ ".", "custom_port7777_suspend_nw_obj", ".", ".", ".", "." ],
                     [ ".", "custom_port7778_suspend_nw_obj", ".", ".", ".", "." ]
@@ -199,7 +199,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -225,7 +225,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -239,7 +239,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_server_replicate_actor", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_server_replicate_actor", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_server_replicate_actor", ".", ".", ".", "." ]
                 ],
                 "title": "server_replicate_actor"
@@ -253,13 +253,13 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_replicate_actor_time", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_replicate_actor_time", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_replicate_actor_time", ".", ".", ".", "." ]
                 ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -285,7 +285,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -299,7 +299,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_replicate_gather_prioritie_time", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_replicate_gather_prioritie_time", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_replicate_gather_prioritie_time", ".", ".", ".", "." ]
                 ],
                 "title": "replicate_gather_prioritie_time"
@@ -313,7 +313,7 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_num_replicate_actor_call", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port7777_num_replicate_actor_call", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ ".", "custom_port7778_num_replicate_actor_call", ".", ".", ".", "." ],
                     [ ".", "custom_port7777_num_replicate_actor_call_per_con_avg", ".", ".", ".", "." ],
                     [ ".", "custom_port7778_num_replicate_actor_call_per_con_avg", ".", ".", ".", "." ]
@@ -321,7 +321,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -346,16 +346,16 @@
             "properties": {
                 "sparkline": true,
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_num_replicate_actor_call", "metric_type", "gauge", "host", "{{ host }}", { "visible": false } ],
+                    [ "CWAgent", "custom_port7777_num_replicate_actor_call", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com", { "visible": false } ],
                     [ ".", "custom_port7778_num_replicate_actor_call", ".", ".", ".", ".", { "visible": false } ],
                     [ ".", "custom_port7777_num_replicate_actor_call_per_con_avg", ".", ".", ".", ".", { "visible": false } ],
                     [ ".", "custom_port7778_num_replicate_actor_call_per_con_avg", ".", ".", ".", ".", { "visible": false } ],
-                    [ ".", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ ".", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ "...", "PORT=7778", ".", "." ]
                 ],
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "start": "-PT1H",
                 "end": "P0D",
                 "stat": "Average",
@@ -380,13 +380,13 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "procstat_cpu_time", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ "CWAgent", "procstat_cpu_time", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ "...", "PORT=7778", ".", "." ]
                 ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "start": "-PT1H",
                 "end": "P0D",
                 "stat": "Average",
@@ -413,7 +413,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "start": "-PT1H",
                 "end": "P0D",
                 "stat": "Average",
@@ -428,7 +428,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "procstat_memory_rss", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ "CWAgent", "procstat_memory_rss", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ "...", "PORT=7778", ".", "." ]
                 ],
                 "title": "procstat_memory_rss"
@@ -444,7 +444,7 @@
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "start": "-PT1H",
                 "end": "P0D",
                 "stat": "Average",
@@ -459,7 +459,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "procstat_read_bytes", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ "CWAgent", "procstat_read_bytes", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "ip-10-17-218-94.compute-1.amazonaws.com" ],
                     [ "...", "PORT=7778", ".", "." ],
                     [ ".", "procstat_write_bytes", ".", ".", ".", "PORT=7777", ".", "." ],
                     [ "...", "PORT=7778", ".", "." ]
@@ -476,18 +476,18 @@
             "properties": {
                 "sparkline": true,
                 "metrics": [
-                    [ "CWAgent", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}", { "label": "PORT=7777 cpu_usage" } ],
+                    [ "CWAgent", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "ip-10-17-218-94.compute-1.amazonaws.com", { "label": "PORT=7777 cpu_usage" } ],
                     [ ".", "procstat_memory_rss", ".", ".", ".", ".", ".", ".", { "label": "PORT=7777 memory_rss" } ],
-                    [ ".", "custom_port7777_ave_fps", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=7777 ave_fps" } ],
+                    [ ".", "custom_port7777_ave_fps", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com", { "label": "PORT=7777 ave_fps" } ],
                     [ ".", "custom_port7777_ave_ms", ".", ".", ".", ".", { "label": "PORT=7777 ave_ms" } ],
-                    [ ".", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7778", "host", "{{ host }}", { "label": "PORT=7778 cpu_usage" } ],
+                    [ ".", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7778", "host", "ip-10-17-218-94.compute-1.amazonaws.com", { "label": "PORT=7778 cpu_usage" } ],
                     [ ".", "procstat_memory_rss", ".", ".", ".", ".", ".", ".", { "label": "PORT=7778 memory_rss" } ],
-                    [ ".", "custom_port7778_ave_fps", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=7778 ave_fps" } ],
+                    [ ".", "custom_port7778_ave_fps", "metric_type", "gauge", "host", "ip-10-17-218-94.compute-1.amazonaws.com", { "label": "PORT=7778 ave_fps" } ],
                     [ ".", "custom_port7778_ave_ms", ".", ".", ".", ".", { "label": "PORT=7778 ave_ms" } ]
                 ],
                 "view": "singleValue",
                 "stacked": false,
-                "region": "{{ region }}",
+                "region": "ap-northeast-1",
                 "yAxis": {
                     "left": {
                         "min": 0,

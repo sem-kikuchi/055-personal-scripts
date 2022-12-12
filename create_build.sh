@@ -35,6 +35,8 @@ buildid=$(echo ${json} | jq -r .Build.BuildId)
 echo ----- create build done. -----
 echo buildid = ${buildid}
 
+echo create_fleet.sh gg-${ver} ${buildid}
+
 popd
 
 echo "done"
