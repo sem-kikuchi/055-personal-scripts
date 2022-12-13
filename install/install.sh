@@ -27,8 +27,12 @@ sudo systemctl enable statsd_monitor@"metrics"
 sudo systemctl start statsd_monitor@"metrics"
 # sudo systemctl status statsd_monitor@"metrics"
 
+# assume role auto rotate
+# The time limit for assume role is 60 minutes, so rotate every 30 minutes.
+(crontab -l; echo "*/20 * * * * /local/game/set-role.sh > /dev/null 2>&1") | crontab -
 
 # create dashboard
+fleetname=$(cat /local/gamemetadata/gamelift-metadata.json | jq -r .name)
 fleetid=$(cat /local/gamemetadata/gamelift-metadata.json | jq -r .fleetId)
 hostname=$(curl -s http://169.254.169.254/latest/meta-data/local-hostname)
 region=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed -e 's/.$//g')

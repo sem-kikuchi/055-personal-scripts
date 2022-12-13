@@ -3,20 +3,20 @@
         {
             "height": 6,
             "width": 8,
-            "y": 16,
+            "y": 18,
             "x": 0,
             "type": "metric",
             "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_ave_fps", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_ave_fps", ".", ".", ".", "." ]
+                ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
                 "region": "{{ region }}",
                 "stat": "Average",
                 "period": 300,
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_ave_fps", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_ave_fps", ".", ".", ".", "." ]
-                ],
                 "liveData": true,
                 "yAxis": {
                     "left": {
@@ -35,16 +35,16 @@
         {
             "height": 6,
             "width": 8,
-            "y": 16,
+            "y": 18,
             "x": 8,
             "type": "metric",
             "properties": {
-                "view": "timeSeries",
-                "stacked": false,
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_ave_ms", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port<<< port >>>_ave_ms", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
                     [ ".", "custom_port7778_ave_ms", ".", ".", ".", "." ]
                 ],
+                "view": "timeSeries",
+                "stacked": false,
                 "region": "{{ region }}",
                 "title": "ave_ms",
                 "period": 300,
@@ -56,16 +56,21 @@
                         "label": "milliseconds",
                         "showUnits": false
                     }
-                }
+                },
+                "stat": "Average"
             }
         },
         {
             "height": 6,
             "width": 8,
-            "y": 16,
+            "y": 18,
             "x": 16,
             "type": "metric",
             "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_connection_num", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_connection_num", ".", ".", ".", "." ]
+                ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
@@ -82,20 +87,20 @@
                 "legend": {
                     "position": "right"
                 },
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_connection_num", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_connection_num", ".", ".", ".", "." ]
-                ],
                 "title": "connection_num"
             }
         },
         {
             "height": 6,
             "width": 8,
-            "y": 22,
+            "y": 24,
             "x": 0,
             "type": "metric",
             "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port7778_ave_ping", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port<<< port >>>_ave_ping", ".", ".", ".", "." ]
+                ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
@@ -112,54 +117,20 @@
                 "legend": {
                     "position": "right"
                 },
-                "metrics": [
-                    [ "CWAgent", "custom_port7778_ave_ping", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7777_ave_ping", ".", ".", ".", "." ],
-                    [ ".", "custom_port7777_max_ping", ".", ".", ".", "." ],
-                    [ ".", "custom_port7778_max_ping", ".", ".", ".", "." ]
-                ],
-                "title": "ping"
+                "title": "ave_ping"
             }
         },
         {
             "height": 6,
             "width": 8,
-            "y": 22,
+            "y": 30,
             "x": 8,
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_in_rate", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_in_rate", ".", ".", ".", "." ],
-                    [ ".", "custom_port7777_out_rate", ".", ".", ".", "." ],
-                    [ ".", "custom_port7778_out_rate", ".", ".", ".", "." ]
+                    [ "CWAgent", "custom_port<<< port >>>_actor_count", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_actor_count", ".", ".", ".", "." ]
                 ],
-                "sparkline": true,
-                "view": "timeSeries",
-                "stacked": false,
-                "region": "{{ region }}",
-                "stat": "Average",
-                "period": 300,
-                "liveData": true,
-                "yAxis": {
-                    "left": {
-                        "label": "Mbit",
-                        "showUnits": false
-                    }
-                },
-                "legend": {
-                    "position": "right"
-                },
-                "title": "in/out rate"
-            }
-        },
-        {
-            "height": 6,
-            "width": 8,
-            "y": 22,
-            "x": 16,
-            "type": "metric",
-            "properties": {
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
@@ -176,52 +147,20 @@
                 "legend": {
                     "position": "right"
                 },
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_actor_count", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_actor_count", ".", ".", ".", "." ]
-                ],
                 "title": "actor_count"
             }
         },
         {
             "height": 6,
             "width": 8,
-            "y": 28,
-            "x": 0,
-            "type": "metric",
-            "properties": {
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_active_nw_obj", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_active_nw_obj", ".", ".", ".", "." ],
-                    [ ".", "custom_port7777_suspend_nw_obj", ".", ".", ".", "." ],
-                    [ ".", "custom_port7778_suspend_nw_obj", ".", ".", ".", "." ]
-                ],
-                "sparkline": true,
-                "view": "timeSeries",
-                "stacked": false,
-                "region": "{{ region }}",
-                "stat": "Average",
-                "period": 300,
-                "liveData": true,
-                "yAxis": {
-                    "left": {
-                        "label": "count",
-                        "showUnits": false
-                    }
-                },
-                "legend": {
-                    "position": "right"
-                },
-                "title": "nw_obj"
-            }
-        },
-        {
-            "height": 6,
-            "width": 8,
-            "y": 28,
+            "y": 36,
             "x": 8,
             "type": "metric",
             "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_server_replicate_actor", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_server_replicate_actor", ".", ".", ".", "." ]
+                ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
@@ -238,22 +177,18 @@
                 "legend": {
                     "position": "right"
                 },
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_server_replicate_actor", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_server_replicate_actor", ".", ".", ".", "." ]
-                ],
                 "title": "server_replicate_actor"
             }
         },
         {
             "height": 6,
             "width": 8,
-            "y": 28,
+            "y": 36,
             "x": 16,
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_replicate_actor_time", "metric_type", "gauge", "host", "{{ host }}" ],
+                    [ "CWAgent", "custom_port<<< port >>>_replicate_actor_time", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
                     [ ".", "custom_port7778_replicate_actor_time", ".", ".", ".", "." ]
                 ],
                 "sparkline": true,
@@ -278,10 +213,14 @@
         {
             "height": 6,
             "width": 8,
-            "y": 34,
+            "y": 42,
             "x": 0,
             "type": "metric",
             "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_replicate_gather_prioritie_time", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_replicate_gather_prioritie_time", ".", ".", ".", "." ]
+                ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
@@ -298,66 +237,24 @@
                 "legend": {
                     "position": "right"
                 },
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_replicate_gather_prioritie_time", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_replicate_gather_prioritie_time", ".", ".", ".", "." ]
-                ],
                 "title": "replicate_gather_prioritie_time"
             }
         },
         {
             "height": 6,
-            "width": 8,
-            "y": 34,
-            "x": 8,
-            "type": "metric",
-            "properties": {
-                "metrics": [
-                    [ "CWAgent", "custom_port7777_num_replicate_actor_call", "metric_type", "gauge", "host", "{{ host }}" ],
-                    [ ".", "custom_port7778_num_replicate_actor_call", ".", ".", ".", "." ],
-                    [ ".", "custom_port7777_num_replicate_actor_call_per_con_avg", ".", ".", ".", "." ],
-                    [ ".", "custom_port7778_num_replicate_actor_call_per_con_avg", ".", ".", ".", "." ]
-                ],
-                "sparkline": true,
-                "view": "timeSeries",
-                "stacked": false,
-                "region": "{{ region }}",
-                "stat": "Average",
-                "period": 300,
-                "liveData": true,
-                "yAxis": {
-                    "left": {
-                        "label": "count",
-                        "showUnits": false
-                    }
-                },
-                "legend": {
-                    "position": "right"
-                },
-                "title": "num_replicate_actor_call"
-            }
-        },
-        {
-            "height": 6,
             "width": 12,
-            "y": 4,
+            "y": 0,
             "x": 0,
             "type": "metric",
             "properties": {
-                "sparkline": true,
                 "metrics": [
-                    [ "CWAgent", "custom_port7777_num_replicate_actor_call", "metric_type", "gauge", "host", "{{ host }}", { "visible": false } ],
-                    [ ".", "custom_port7778_num_replicate_actor_call", ".", ".", ".", ".", { "visible": false } ],
-                    [ ".", "custom_port7777_num_replicate_actor_call_per_con_avg", ".", ".", ".", ".", { "visible": false } ],
-                    [ ".", "custom_port7778_num_replicate_actor_call_per_con_avg", ".", ".", ".", ".", { "visible": false } ],
-                    [ ".", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ "CWAgent", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=<<< port >>>", "host", "{{ host }}" ],
                     [ "...", "PORT=7778", ".", "." ]
                 ],
+                "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
                 "region": "{{ region }}",
-                "start": "-PT1H",
-                "end": "P0D",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -375,12 +272,12 @@
         {
             "height": 6,
             "width": 12,
-            "y": 4,
+            "y": 0,
             "x": 12,
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ "CWAgent", "procstat_cpu_time", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ "CWAgent", "procstat_cpu_time", "process_name", "PRJ055Server", "pattern", "PORT=<<< port >>>", "host", "{{ host }}" ],
                     [ "...", "PORT=7778", ".", "." ]
                 ],
                 "sparkline": true,
@@ -406,7 +303,7 @@
         {
             "height": 6,
             "width": 12,
-            "y": 10,
+            "y": 6,
             "x": 0,
             "type": "metric",
             "properties": {
@@ -414,8 +311,6 @@
                 "view": "timeSeries",
                 "stacked": false,
                 "region": "{{ region }}",
-                "start": "-PT1H",
-                "end": "P0D",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
@@ -428,7 +323,7 @@
                     "position": "right"
                 },
                 "metrics": [
-                    [ "CWAgent", "procstat_memory_rss", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
+                    [ "CWAgent", "procstat_memory_rss", "process_name", "PRJ055Server", "pattern", "PORT=<<< port >>>", "host", "{{ host }}" ],
                     [ "...", "PORT=7778", ".", "." ]
                 ],
                 "title": "procstat_memory_rss"
@@ -437,66 +332,265 @@
         {
             "height": 6,
             "width": 12,
-            "y": 10,
+            "y": 12,
             "x": 12,
             "type": "metric",
             "properties": {
+                "metrics": [
+                    [ "CWAgent", "procstat_read_bytes", "process_name", "PRJ055Server", "pattern", "PORT=<<< port >>>", "host", "{{ host }}" ],
+                    [ "...", "PORT=7778", ".", "." ]
+                ],
                 "sparkline": true,
                 "view": "timeSeries",
                 "stacked": false,
                 "region": "{{ region }}",
-                "start": "-PT1H",
-                "end": "P0D",
                 "stat": "Average",
                 "period": 300,
                 "liveData": true,
                 "yAxis": {
                     "left": {
-                        "label": ""
+                        "label": "",
+                        "showUnits": true
                     }
                 },
                 "legend": {
                     "position": "right"
                 },
-                "metrics": [
-                    [ "CWAgent", "procstat_read_bytes", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}" ],
-                    [ "...", "PORT=7778", ".", "." ],
-                    [ ".", "procstat_write_bytes", ".", ".", ".", "PORT=7777", ".", "." ],
-                    [ "...", "PORT=7778", ".", "." ]
-                ],
-                "title": "procstat_read_bytes, procstat_write_bytes"
+                "title": "procstat_read_bytes"
             }
         },
         {
             "type": "metric",
             "x": 0,
-            "y": 0,
-            "width": 24,
-            "height": 4,
+            "y": 12,
+            "width": 12,
+            "height": 6,
             "properties": {
-                "sparkline": true,
+                "view": "timeSeries",
+                "stacked": false,
                 "metrics": [
-                    [ "CWAgent", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7777", "host", "{{ host }}", { "label": "PORT=7777 cpu_usage" } ],
-                    [ ".", "procstat_memory_rss", ".", ".", ".", ".", ".", ".", { "label": "PORT=7777 memory_rss" } ],
-                    [ ".", "custom_port7777_ave_fps", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=7777 ave_fps" } ],
-                    [ ".", "custom_port7777_ave_ms", ".", ".", ".", ".", { "label": "PORT=7777 ave_ms" } ],
-                    [ ".", "procstat_cpu_usage", "process_name", "PRJ055Server", "pattern", "PORT=7778", "host", "{{ host }}", { "label": "PORT=7778 cpu_usage" } ],
-                    [ ".", "procstat_memory_rss", ".", ".", ".", ".", ".", ".", { "label": "PORT=7778 memory_rss" } ],
-                    [ ".", "custom_port7778_ave_fps", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=7778 ave_fps" } ],
-                    [ ".", "custom_port7778_ave_ms", ".", ".", ".", ".", { "label": "PORT=7778 ave_ms" } ]
+                    [ "CWAgent", "procstat_write_bytes", "process_name", "PRJ055Server", "pattern", "PORT=<<< port >>>", "host", "{{ host }}" ],
+                    [ "...", "PORT=7778", ".", "." ]
                 ],
-                "view": "singleValue",
+                "region": "{{ region }}",
+                "title": "procstat_write_bytes",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 12,
+            "y": 6,
+            "width": 12,
+            "height": 6,
+            "properties": {
+                "view": "timeSeries",
                 "stacked": false,
                 "region": "{{ region }}",
-                "yAxis": {
-                    "left": {
-                        "min": 0,
-                        "max": 100
-                    }
-                },
+                "title": "procstat_memory_data",
+                "metrics": [
+                    [ "CWAgent", "procstat_memory_data", "process_name", "PRJ055Server", "pattern", "PORT=<<< port >>>", "host", "{{ host }}" ],
+                    [ "...", "PORT=7778", ".", "." ]
+                ]
+            }
+        },
+        {
+            "type": "metric",
+            "x": 8,
+            "y": 24,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_max_ping", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_max_ping", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "max_ping",
                 "stat": "Average",
                 "period": 300,
-                "title": "summary"
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "label": "milliseconds",
+                        "showUnits": false
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 30,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_active_nw_obj", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_active_nw_obj", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "active_nw_obj",
+                "stat": "Average",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "count"
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 36,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_suspend_nw_obj", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_suspend_nw_obj", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "suspend_nw_obj",
+                "stat": "Average",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "label": "count",
+                        "showUnits": false
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 24,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_in_rate", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_in_rate", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "in_rate",
+                "stat": "Average",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "label": "Mbit",
+                        "showUnits": false
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 30,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_out_rate", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_out_rate", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "out_rate",
+                "stat": "Average",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "Mbit"
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 8,
+            "y": 42,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_num_replicate_actor_call", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_num_replicate_actor_call", ".", ".", ".", ".", { "label": "PORT=7778" } ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "num_replicate_actor_call",
+                "stat": "Average",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "label": "count",
+                        "showUnits": false
+                    }
+                }
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 42,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "CWAgent", "custom_port<<< port >>>_num_replicate_actor_call_per_con_avg", "metric_type", "gauge", "host", "{{ host }}", { "label": "PORT=<<< port >>>" } ],
+                    [ ".", "custom_port7778_num_replicate_actor_call_per_con_avg", ".", ".", ".", ".", { "label": "PORT=7778" } ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "{{ region }}",
+                "title": "num_replicate_actor_call_per_con_avg",
+                "stat": "Average",
+                "period": 300,
+                "legend": {
+                    "position": "right"
+                },
+                "yAxis": {
+                    "left": {
+                        "showUnits": false,
+                        "label": "count"
+                    }
+                }
             }
         }
     ]
